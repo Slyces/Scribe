@@ -1,5 +1,5 @@
 # Use an official Python runtime as a base image
-FROM python:2.7-slim
+FROM python:3.6-slim
 
 # Set the working directory to /app
 WORKDIR /app
@@ -15,6 +15,3 @@ EXPOSE 80
 
 # Define environment variable
 ENV NAME World
-
-# Run app.py when the container launches
-CMD ["python", "app.py"]

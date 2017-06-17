@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Scribe.urls'
+ROOT_URLCONF = 'scribe.urls'
 
 TEMPLATES = [
     {
