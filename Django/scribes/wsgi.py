@@ -1,5 +1,5 @@
 """
-WSGI config for Scribe project.
+WSGI config for Scribes project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
