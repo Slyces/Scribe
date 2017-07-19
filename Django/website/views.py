@@ -4,7 +4,10 @@ from django.shortcuts import render
 
 # Temp
 from django.http import HttpResponse
+from django.contrib.auth.views import login_required
+from django.views import View
+from django.views.generic.base import TemplateView
 
 
-def index(request):
-    return HttpResponse("Hello, world!")
+class IndexView(TemplateView):
+    template_name = 'website/index.html'
