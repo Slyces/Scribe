@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
     <!-- Site Properties -->
-    {% block title %}{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
 
     <link rel="stylesheet" type="text/css" href="{% static 'website/semantic/components/reset.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'website/semantic/components/site.min.css' %}">
@@ -24,8 +24,12 @@
     <link rel="stylesheet" type="text/css" href="{% static 'website/semantic/components/list.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'website/semantic/components/segment.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'website/semantic/components/dropdown.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'website/semantic/components/button.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'website/semantic/components/input.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'website/semantic/components/form.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'website/semantic/components/icon.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'website/semantic/components/sticky.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'website/semantic/components/message.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'website/semantic/components/tab.min.css' %}">
     {% block css %}{% endblock %}
 
