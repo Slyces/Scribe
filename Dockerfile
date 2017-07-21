@@ -20,4 +20,4 @@ EXPOSE 8000
 ENV NAME World
 
 # Command to start on running
-CMD ["/start.sh"]
+CMD ["start.sh"]
