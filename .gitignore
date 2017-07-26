@@ -50,7 +50,7 @@ coverage.xml
 *.mo
 *.pot
 
-# Django_world stuff:
+# Django stuff:
 *.log
 local_settings.py
 
