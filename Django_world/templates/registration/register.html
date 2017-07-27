@@ -36,61 +36,70 @@
                     Register your account
                 </div>
             </h2>
-            <form action="/accounts/register/" method="post">
+            <form action="" method="post">
                 {% csrf_token %}
-                <div class="ui raised segment">
-                    <div class="ui form">
-                        <div class="two fields">
+                <div class="ui segments">
+                    <div class="ui raised segment">
+                        <h3>
+                            Login informations
+                        </h3>
+                        <div class="ui form">
                             <div class="field">
                                 <label>Username</label>
-                                {{ form.username }}
+                                {{ user_form.username }}
                             </div>
+                        </div>
+                        <div class="ui form">
                             <div class="field">
                                 <label>Password</label>
-                                {{ form.password }}
+                                {{ user_form.password }}
                             </div>
                         </div>
                     </div>
-                    <div class="ui form">
-                        <div class="three fields">
+                    <div class="ui raised segment">
+                        <h3>
+                            Complements
+                        </h3>
+                        <div class="ui form">
                             <div class="field">
                                 <label>Email</label>
-                                {{ form.email }}
+                                {{ user_form.email }}
                             </div>
+                        </div>
+                        <div class="ui form">
                             <div class="field">
-                                <label>First name</label>
-                                {{ form.first_name }}
+                                <label>First Name</label>
+                                {{ user_form.first_name }}
                             </div>
-                            <div class="field">
-                                <label>Last name</label>
-                                {{ form.last_name }}
-                            </div>
+                        </div>
+                        <div class="ui form">
+                                <div class="field">
+                                    <label>Last Name</label>
+                                    {{ user_form.last_name }}
+                                </div>
+                        </div>
+                    </div>
+                    <div class="ui raised segment">
+                        <h3>
+                            Data collection
+                        </h3>
+                        <div class="ui form">
+                                <div class="field">
+                                    <label>Facebook Id</label>
+                                    {{ profile_form.facebook_id }}
+                                </div>
+                        </div>
+                        <div class="ui form">
+                                <div class="field">
+                                    <label>Phone Number</label>
+                                    {{ profile_form.phone_number }}
+                                </div>
                         </div>
                     </div>
                     <input class="ui fluid large blue submit button" type="submit" value="Register">
                 </div>
-                {#                {{ form.as_p }}#}
-            </form>
-            {#            <form class="ui large form" action="." method="post">#}
-            {#                {% csrf_token %}#}
-            {#                <div class="ui stacked segment">#}
-            {#                    <div class="field">#}
-            {#                        <div class="ui left icon input">#}
-            {#                            <i class="user icon"></i>#}
-            {#                            {{ form.username }}#}
-            {#                        </div>#}
-            {#                    </div>#}
-            {#                    <div class="field">#}
-            {#                        <div class="ui left icon input">#}
-            {#                            <i class="lock icon"></i>#}
-            {#                            {{ form.password }}#}
-            {#                        </div>#}
-            {#                    </div>#}
-            {#                    <div class="ui fluid large blue submit button">Login</div>#}
-            {#                </div>#}
-            {##}
-            {#                <div class="ui error message">{{ form.error_message }}</div>#}
-            {#            </form>#}
         </div>
+        </form>
+    </div>
     </div>
 {% endblock %}

@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.views import View
-from django.template import RequestContext
+from django.urls import reverse
 from django.db import transaction
+from .models import *
 from .forms import UserForm, ProfileForm
 
 
@@ -15,11 +16,21 @@ def register(request):
         user_form = UserForm(request.POST, prefix='user')
         profile_form = ProfileForm(request.POST, prefix='profile')
         if user_form.is_valid() and profile_form.is_valid():
-            user = user_form.save()
-            profile = profile_form.save(commit=False)
-            profile.user = user
+            user = User.objects.create_user(
+                user_form.cleaned_data['username'],
+                password= user_form.cleaned_data['password'],
+                email= user_form.cleaned_data['email'],
+                first_name= user_form.cleaned_data['first_name'],
+                last_name= user_form.cleaned_data['last_name'],
+            )
+            profile = Profile.objects.create(
+                user= user,
+                facebook_id= profile_form.cleaned_data['facebook_id'],
+                phone_number= profile_form.cleaned_data['phone_number'],
+            )
+            user.save()
             profile.save()
-            return redirect('settings:profile')
+            return redirect(reverse('website:home'))
     else:
         user_form = UserForm(prefix='user')
         profile_form = ProfileForm(prefix='profile')
