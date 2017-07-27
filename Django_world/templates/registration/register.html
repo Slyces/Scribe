@@ -1,0 +1,96 @@
+{% extends 'website/includes/base.html' %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block css %}
+    <style type="text/css">
+        body {
+            background-color: #DADADA;
+        }
+
+        body > .grid {
+            height: 100%;
+        }
+
+        .image {
+            margin-top: -100px;
+        }
+
+        .column {
+            max-width: 450px;
+        }
+
+    </style>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
+
+{% block content %}
+    <div class="ui middle aligned center aligned grid">
+        <div class="column">
+            <h2 class="ui blue image header">
+                <div class="content">
+                    Register your account
+                </div>
+            </h2>
+            <form action="/accounts/register/" method="post">
+                {% csrf_token %}
+                <div class="ui raised segment">
+                    <div class="ui form">
+                        <div class="two fields">
+                            <div class="field">
+                                <label>Username</label>
+                                {{ form.username }}
+                            </div>
+                            <div class="field">
+                                <label>Password</label>
+                                {{ form.password }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui form">
+                        <div class="three fields">
+                            <div class="field">
+                                <label>Email</label>
+                                {{ form.email }}
+                            </div>
+                            <div class="field">
+                                <label>First name</label>
+                                {{ form.first_name }}
+                            </div>
+                            <div class="field">
+                                <label>Last name</label>
+                                {{ form.last_name }}
+                            </div>
+                        </div>
+                    </div>
+                    <input class="ui fluid large blue submit button" type="submit" value="Register">
+                </div>
+                {#                {{ form.as_p }}#}
+            </form>
+            {#            <form class="ui large form" action="." method="post">#}
+            {#                {% csrf_token %}#}
+            {#                <div class="ui stacked segment">#}
+            {#                    <div class="field">#}
+            {#                        <div class="ui left icon input">#}
+            {#                            <i class="user icon"></i>#}
+            {#                            {{ form.username }}#}
+            {#                        </div>#}
+            {#                    </div>#}
+            {#                    <div class="field">#}
+            {#                        <div class="ui left icon input">#}
+            {#                            <i class="lock icon"></i>#}
+            {#                            {{ form.password }}#}
+            {#                        </div>#}
+            {#                    </div>#}
+            {#                    <div class="ui fluid large blue submit button">Login</div>#}
+            {#                </div>#}
+            {##}
+            {#                <div class="ui error message">{{ form.error_message }}</div>#}
+            {#            </form>#}
+        </div>
+    </div>
+{% endblock %}
